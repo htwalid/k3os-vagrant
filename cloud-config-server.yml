@@ -8,5 +8,11 @@ run_cmd:
 - "chown -R vagrant /home/vagrant/.ssh"
 - "echo 'vagrant  ALL=(ALL:ALL) ALL' >> /etc/sudoers"
 k3os:
+  k3s_args:
+  - server
+  - "--no-deploy servicelb"
+  - "--no-deploy traefik"
+  - "--node-ip 192.168.33.11"
   password: rancher
+  token: htwalid
   
